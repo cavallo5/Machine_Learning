@@ -1,0 +1,59 @@
+
+Requirements:
+
+* Python 3.5
+* Numpy, PIL, pygraphviz, matplotlib e networkx.
+* Libreria GP: https://code.google.com/p/deap/
+
+* Ubuntu 14.04 o successiva
+sudo apt-get install python-setuptools python-numpy python-matplotlib python-pil python-pygraphviz python-networkx
+sudo pip install deap
+
+The libreries can be installed also using pip  (e.g.: sudo pip install networkx    sudo apt-get install python-pil ....)
+
+* Windows
+Same libreries (untested).
+Advice: install Ananconda that should already include all necessary libraries  dhttps://www.continuum.io/downloads 
+
+
+SCRIPTS: 
+--------
+dataset2/create_dataset.py
+
+generates two datasets from a .tif image, one with data from the 'clean' image, the other from the noisy image.
+All'interno della directory "dataset" è già presente un set di immagini già convertive tramite questo script.
+
+usage:
+
+python create_dataset.py input_image.tif prefix noiselevel
+
+e.g.:
+python create_dataset.py lena.tif LENANOISE 20
+will create the following files, to be used as datasets:
+LENANOISE-data-clean.txt 
+LENANOISE-data-noise-20.txt
+LENANOISE-greyscale.bmp
+LENANOISE-greyscale-noise-20.bmp
+
+-----------
+load_logbook.py
+
+creates a plot of fitness and tree size vs. generations
+
+e.g.:
+python load_logbook.py LENA_201412183633/LENA_logbook.pkl
+
+------------
+run_gp-complete.py
+
+GP training
+
+The image to be denoised must be specified inside the code (line 31)
+
+------------
+create_img_from_gp.py
+
+Creates an image from the best solution found by the  GP
+
+e.g.:
+python create_img_from_gp.py LENA_201412183633/LENA_best.pkl

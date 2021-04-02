@@ -1,0 +1,1 @@
+avg3(xy, xy, avg3(x0y, safesub(avg2(safeadd(24, x1y1), safeadd(24, xy0)), safesub(safemul(20, 24), avg3(xy1, 24, x1y))), safesub(avg3(safesub(x0y1, xy), safemul(xy1, xy), avg3(x1y, x1y1, x1y1)), safesub(safemul(24, 24), safeadd(xy1, x1y)))))
